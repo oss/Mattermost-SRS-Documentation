@@ -24,7 +24,7 @@
 \hypersetup{
     bookmarks=false,    % show bookmarks bar?
     pdftitle={Software Requirement Specification},    % title
-    pdfauthor={Jean-Philippe Eisenbarth},                     % author
+    pdfauthor={OSS},                     % author
     pdfsubject={TeX and LaTeX},                        % subject of the document
     pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
     colorlinks=true,       % false: boxed links; true: colored links
@@ -49,13 +49,13 @@
         \vspace{1.9cm}
         for\\
         \vspace{1.9cm}
-        $<$Project$>$\\
+        Mattermost Adoption Project\\
         \vspace{1.9cm}
-        \LARGE{Version \myversion approved}\\
+        \LARGE{Version \myversion}\\
         \vspace{1.9cm}
-        Prepared by $<$author$>$\\
+        Prepared by Aedan Dispenza, Jack Chen, Renish Matta\\
         \vspace{1.9cm}
-        $<$Organization$>$\\
+        OSS\\
         \vspace{1.9cm}
         \today\\
     \end{bfseries}
@@ -64,42 +64,47 @@
 \tableofcontents
 
 
-\chapter*{Revision History}
-
-\begin{center}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-	    Name & Date & Reason For Changes & Version\\
-        \hline
-	    21 & 22 & 23 & 24\\
-        \hline
-	    31 & 32 & 33 & 34\\
-        \hline
-    \end{tabular}
-\end{center}
+%\chapter*{Revision History}
+%
+%\begin{center}
+%    \begin{tabular}{|c|c|c|c|}
+%        \hline
+%	    Name & Date & Reason For Changes & Version\\
+%        \hline
+%	    21 & 22 & 23 & 24\\
+%        \hline
+%	    31 & 32 & 33 & 34\\
+%        \hline
+%    \end{tabular}
+%\end{center}
 
 \chapter{Introduction}
 
 \section{Purpose}
-$<$Identify the product whose software requirements are specified in this 
-document, including the revision or release number. Describe the scope of the 
-product that is covered by this SRS, particularly if this SRS describes only 
-part of the system or a single subsystem.$>$
+Mattermost is an open-source SaaS messaging service (and slack alternative).
+This project intends to stand up and deploy a local instance of Mattermost to
+be used by students and faculty at staff who a) need an alternative to slack as
+they cannot get a license for it or b) need a chat client which stores data on
+Rutgers servers to use within Rutgers
 
-\section{Document Conventions}
-$<$Describe any standards or typographical conventions that were followed when 
-writing this SRS, such as fonts or highlighting that have special significance.  
-For example, state whether priorities  for higher-level requirements are assumed 
-to be inherited by detailed requirements, or whether every requirement statement 
-is to have its own priority.$>$
+Features: a) storing all information used throught he client on Rutgers
+servers.  b) Being able to leverage more open source technology as opposed to
+using closed source solutions such as slack
 
-\section{Intended Audience and Reading Suggestions}
-$<$Describe the different types of reader that the document is intended for, 
-such as developers, project managers, marketing staff, users, testers, and 
-documentation writers. Describe what the rest of this SRS contains and how it is 
-organized. Suggest a sequence for reading the document, beginning with the 
-overview sections and proceeding through the sections that are most pertinent to 
-each reader type.$>$
+This document is meant to detail the features of Mattermost which OSS can
+implement for the university as well as the necessary software and hardware
+needed to implment said features.
+
+%\section{Document Conventions}
+%$<$Describe any standards or typographical conventions that were followed when 
+%writing this SRS, such as fonts or highlighting that have special significance.  
+%For example, state whether priorities  for higher-level requirements are assumed 
+%to be inherited by detailed requirements, or whether every requirement statement 
+%is to have its own priority.$>$
+
+\section{Intended Audience}
+The primary audience is the Office of Information Technology.  <TODO: Add more
+details here>
 
 \section{Project Scope}
 $<$Provide a short description of the software being specified and its purpose, 
