@@ -123,12 +123,15 @@ Slack to provide
 Features:
 1. LDAP
 2. Create and Install Addons specific to Rutgers Environment
+3. Unlimited message storing size
 
 Purpose
   benefits
   objectives
   goals
     business/cooporate strategies
+
+Mention other businesses who use mattermost
 
 \section{References}
 Acceptable Use Policy for Information Technology Resources Policy:
@@ -147,7 +150,17 @@ Mattermost Integration Apps:
 \chapter{Overall Description}
 
 \section{Product Perspective}
-As stated previously, we plan to use Mattermost
+As stated previously, we plan to use Mattermost as an alternative to Slack as a
+solution which is easily managable and low cost.
+Mattermost will can provide:
+    1. Support to store an unlimited number of chat messages (Slack is limited
+    to 10000)
+    2. LDAP support
+    3. The ability to create Rutgers specific addons as it is opened source.
+
+TODO: Insert diagram at link
+(https://docs.mattermost.com/install/requirements.html#deployment-overview ) here
+TODO: Mention the hardware requirements of standing up this server somewhere
 $<$Describe the context and origin of the product being specified in this SRS.
 For example, state whether this product is a follow-on member of a product
 family, a replacement for certain existing systems, or a new, self-contained
@@ -158,6 +171,27 @@ components of the overall system, subsystem interconnections, and external
 interfaces can be helpful.$>$
 
 \section{Product Functions}
+1. Includes applications on the web and phone to access the messaging service
+2. Send messages and comments across public, private and 1-1 channels
+3. Personalize notifications for unreads and mentions by source
+4. Share files and images internally and externally
+5. Search public and private channels for historical messages and comments
+6. Attach sound, video and image files from mobile devices
+7. Define team-specific branding and color themes across your devices
+8. Host and manage dozens of teams from a single server instance
+9. System Console and command line tools for managing essential IT
+administration functions
+10. Open Source integrations service providing Gitlab and other software
+support
+11. Features which Slack does not offer:
+    a) Comment threads – to circle back on any topic
+    b) on-English channel names – to support multi-lingual teams
+    c) #hashtags – to quickly tag and find any message
+    d) Auto-highlight messages you wrote – to easily see what you said
+
+In the long term, we see the Mattermost Server to serve any group of Rutgers
+employees seeking a free messaging service.
+
 $<$Summarize the major functions the product must perform or must let the user
 perform. Details will be provided in Section 3, so only a high level summary
 (such as a bullet list) is needed here. Organize the functions to make them
@@ -166,6 +200,9 @@ related requirements and how they relate, such as a top level data flow diagram
 or object class diagram, is often effective.$>$
 
 \section{User Classes and Characteristics}
+ OIT Staff
+ General Faculty
+ Students
 $<$Identify the various user classes that you anticipate will use this product.
 User classes may be differentiated based on frequency of use, subset of product
 functions used, technical expertise, security or privilege levels, educational
