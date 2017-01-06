@@ -21,6 +21,8 @@
 \usepackage[bookmarks=true]{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
 \hypersetup{
     bookmarks=false,    % show bookmarks bar?
     pdftitle={Software Requirement Specification},    % title
@@ -82,56 +84,46 @@
 
 \section{Purpose}
 Mattermost is an open-source SaaS messaging service (and Slack alternative).
+It is a well known messaging service used by several Enterprise level
+organizations such as Samsung, Urban Outfitters, redhat, mozilla, The University
+of British Columbia, Anthropologie, analyticsMD and LegalIO.
+
 This project intends to stand up and deploy a local Mattermost server.
 
-Features: a) storing all information used throught he client on Rutgers
-servers.  b) Being able to leverage more open source technology as opposed to
-using closed source solutions such as slack
-
 This document is meant to detail the features of Mattermost which OSS can
-implement for the university as well as the necessary software and hardware
-needed to implment said features.
+implement for the University as well as the necessary software and hardware
+needed to implment these features.
 
 \section{Intended Audience}
 The primary audience is the Office of Information Technology.  <TODO: Add more
-details here>
+details here.  Ask Jack specifically who the audience within OIT is for this
+report>
 
 \section{Project Scope}
-Setting up a Mattermost server at Rutgers is intended to provide extended
-functionality as to what Slack can provide as well as cease the unauthorized
-use of Slack by faculty members.
+With this project, we plan to set up a Mattermost server to host the messaging
+client for Rutgers University employees.  After doing so, we will continue to
+maintain the server for the full duration of its use.
 
-Currently there are faculty members at Rutgers who are using Slack against the
-the Section 3 of the `` Acceptable Use Policy for Information Technology
-Resources'' policy which states the following:
-``Using third party, cloud and non-cloud, systems not authorized or
-approved by OIT’s Information Protection and Security (IPS) Division to
-transmit, process, store Rutgers data classified as restricted, including
-ePHI. Contact OIT’s IPS division for additional information on using
-third party systems.``
-As Slack has not been approved by OIT's IPS Division, it is not an authorized
-way for faculty to communicate and must be prohibited immediately.
+The goal for this project is to migrate employees to use one centralized
+messaging system to more easily maintain chat data with Rutgers machines.  As
+of today, messaging data from chats are not stored in a centralized location to
+be easily queried for legal purposes.
 
-As an alternative to Slack, we propose Mattermost as an open-source solution
-which we can leverage to for use by Rutgers faculty as we will be able to store
-chat history of faculty on Rutgers machines for retrival in HR Cases.
+Additionally, we want to provide a messaging service with a multitude of
+capabilities and extendability which surpass those available in the chat
+clients current being used today by Rutgers Employees.
 
-We can additionally customize Mattermost to provide features such as JIRA
-integration which is currently beyond the capabilities of
-Slack to provide
+%Currently there are faculty members at Rutgers who are using Slack against the
+%the Section 5B subsection 3 of the `` Acceptable Use Policy for Information Technology
+%Resources'' policy which states the following:
+%``Using third party, cloud and non-cloud, systems not authorized or
+%approved by OIT’s Information Protection and Security (IPS) Division to
+%transmit, process, store Rutgers data classified as restricted, including
+%ePHI. Contact OIT’s IPS division for additional information on using
+%third party systems.``
+%As Slack has not been approved by OIT's IPS Division, it is not an authorized
+%way for faculty to communicate and must be prohibited immediately.
 
-Features:
-1. LDAP
-2. Create and Install Addons specific to Rutgers Environment
-3. Unlimited message storing size
-
-Purpose
-  benefits
-  objectives
-  goals
-    business/cooporate strategies
-
-Mention other businesses who use mattermost
 
 \section{References}
 Acceptable Use Policy for Information Technology Resources Policy:
@@ -150,16 +142,22 @@ Mattermost Integration Apps:
 \chapter{Overall Description}
 
 \section{Product Perspective}
-As stated previously, we plan to use Mattermost as an alternative to Slack as a
+As stated previously, we plan to use Mattermost as a centralized messaging
 solution which is easily managable and low cost.
-Mattermost will can provide:
-    1. Support to store an unlimited number of chat messages (Slack is limited
-    to 10000)
-    2. LDAP support
-    3. The ability to create Rutgers specific addons as it is opened source.
+
+Currently, many Rutgers Employees use chat clients (e.g. Pidgin, Jabber, Slack)
+which store chat information locally on client machines.  This makes it
+difficult for system administrators to retrieve relavent chat information when
+requested for Legal or Human Resource matters.
+
+Furthermore, there is currently no systematic way to provide any requested
+features for pre-existing chat clients used by employees.  By standardizing the
+chat client allows us to support customization claims.
+
+The following image is a diagram of the major components of the overall system:
 
 TODO: Insert diagram at link
-(https://docs.mattermost.com/install/requirements.html#deployment-overview ) here
+(https://docs.mattermost.com/install/requirements.html\#deployment-overview ) here
 TODO: Mention the hardware requirements of standing up this server somewhere
 $<$Describe the context and origin of the product being specified in this SRS.
 For example, state whether this product is a follow-on member of a product
@@ -171,6 +169,16 @@ components of the overall system, subsystem interconnections, and external
 interfaces can be helpful.$>$
 
 \section{Product Functions}
+Mattermost will can provide:
+    1. Support to store an unlimited number of chat messages (Slack is limited
+    to 10000)
+    2. LDAP support
+    3. The ability to create Rutgers specific addons as it is opened source.
+    4. Unlimited message storage size
+
+We can additionally customize Mattermost to provide features such as JIRA
+integration which is currently beyond the capabilities of
+Slack to provide
 1. Includes applications on the web and phone to access the messaging service
 2. Send messages and comments across public, private and 1-1 channels
 3. Personalize notifications for unreads and mentions by source
@@ -186,7 +194,7 @@ support
 11. Features which Slack does not offer:
     a) Comment threads – to circle back on any topic
     b) on-English channel names – to support multi-lingual teams
-    c) #hashtags – to quickly tag and find any message
+    c) \#hashtags – to quickly tag and find any message
     d) Auto-highlight messages you wrote – to easily see what you said
 
 In the long term, we see the Mattermost Server to serve any group of Rutgers
