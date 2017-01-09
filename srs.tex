@@ -22,6 +22,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{graphicx}
+\usepackage{hyperref}
+\newcommand\tab[1][0.5cm]{\hspace*{#1}}
 \graphicspath{ {images/} }
 \hypersetup{
     bookmarks=false,    % show bookmarks bar?
@@ -41,7 +43,6 @@
 %\title{%
 
 %}
-\usepackage{hyperref}
 \begin{document}
 
 \begin{flushright}
@@ -86,123 +87,99 @@ by several enterprise level organizations such as Samsung, Urban Outfitters,
 Red Hat, Mozilla, The University of British Columbia, Anthropologie, analyticsMD
 and LegalIO.\\
 
-This project intends to stand up and deploy a local Mattermost server to
-Rutgers University.\\
-
-This document is meant to detail the features of Mattermost as well as the
-necessary software and hardware needed to implment these features.
+The following document is meant to detail the features of Mattermost as well as
+the necessary software and hardware needed to implment these features.
 
 \section{Intended Audience}
-The primary audience is the Office of Information Technology as well as the
-members of Open Systems Solutions.
+The primary audience is the Office of Information Technology as well as members
+of Open Systems Solutions.\\
+
+Specifically, this document is to be read by the development team,
+project managers, stake holders and testers.
 
 \section{Project Scope}
-We plan to set up a Mattermost server within Rutgers University to host the
-messaging service for Rutgers University employees.  After doing so, we will
-continue to maintain the server for the full duration of its use.\\
+Mattermost is intended to replace existing messaging service systems and chat
+clients with a new web-based system with features detailed within this
+document.\\
 
-The goal for this project is to migrate employees to use one centralized
-messaging system to allow for easy collection and management of messaging data.
-A consolidated location of this data also provides easier access of the data
-when requested by the Legal Services Department.(TODO: is that the name of the
-legal department?)\\
-
-Additionally, we want to provide a messaging service with a multitude of
-capabilities and extendability which surpass that which is available in the chat
-clients current being used today by Rutgers Employees.
+The scope of this project includes deploying a local Mattermost server within
+Rutgers University and progressively rolling out this service to departments
+within the University.
 
 \section{References}
-Acceptable Use Policy for Information Technology Resources Policy:
-  http://policies.rutgers.edu/sites/policies/files/00005638.PDF
-Mattermost Features List:
-  https://www.mattermost.org/features/
-Mattermost Integration Apps:
-  https://www.mattermost.org/community-applications/
-%$<$List any other documents or Web addresses to which this SRS refers. These may
-%include user interface style guides, contracts, standards, system requirements
-%specifications, use case documents, or a vision and scope document.
-%Provide enough information so that the reader could access a copy of each reference,
-%including title, author, version number, date, and source or location.$>$
+\textbf{Acceptable Use Policy for Information Technology Resources Policy:}\\
+http://policies.rutgers.edu/sites/policies/files/00005638.PDF\\
+
+\noindent
+\textbf{Mattermost Features List:}\\
+https://www.mattermost.org/features/\\
+
+\noindent
+\textbf{Mattermost Integration Apps:}\\
+https://www.mattermost.org/community-applications/\\
 
 
 \chapter{Overall Description}
 
 \section{Product Perspective}
-As stated previously, we plan to use Mattermost as a centralized messaging
-solution which is easily managable and low cost.
+We plan to use Mattermost as a centralized messaging solution which is easy to
+manage and low cost for the Office of Information Technology Department (OIT)
+at Rutgers University.  Currently, many OIT Employees use messaging services
+which store chat information either locally on their machines (e.g. Pidgin) or
+in remote servers inaccessible to Rutgers Systems Administrators (e.g. Office
+365) which makes retrieving the information upon request difficult.\\
 
-Currently, many Rutgers Employees use chat clients (e.g. Pidgin, Jabber, Slack)
-which store chat information locally on client machines.  This makes it
-difficult for system administrators to retrieve relavent chat information when
-requested for Legal or Human Resource matters.
+Setting up a messaging system with Mattermost within Rutgers allows the
+University to easily maintain employee chat information as well as provide
+features specific to the needs of Rutgers employees with its modifiable code
+base.\\
 
-Furthermore, there is currently no systematic way to provide any requested
-features for pre-existing chat clients used by employees.  By standardizing the
-chat client allows us to support customization claims.
+To support the OIT department with Mattermost, we would require a single server
+with 4 vCPUs/cores, 8 GB RAM, and 90-180 GB storage.\\
 
 The following image is a diagram of the major components of the overall system:
 \includegraphics[scale=0.5, width=\textwidth]{mattermost-diagram.png}
 
-TODO: Mention the hardware requirements of standing up this server somewhere
-$<$Describe the context and origin of the product being specified in this SRS.
-For example, state whether this product is a follow-on member of a product
-family, a replacement for certain existing systems, or a new, self-contained
-product. If the SRS defines a component of a larger system, relate the
-requirements of the larger system to the functionality of this software and
-identify interfaces between the two. A simple diagram that shows the major
-components of the overall system, subsystem interconnections, and external
-interfaces can be helpful.$>$
-
 \section{Product Functions}
-Mattermost will can provide:\\
-    1. Support to store an unlimited number of chat messages (Slack is
-      limited to 10000)\\
-    2. LDAP support\\
-    3. The ability to create Rutgers specific addons as it is opened source.\\
-    4. Unlimited message storage size\\
+(TODO: Determine the best order for these features)\\
+Mattermost can provide the following features:\\
+\tab 1. A website, android app and iOS app to access your Mattermost
+account, allowing \tab employees to pick up conversations where they left off when
+leaving the desk\\
+\tab 2. Share files and images within chats\\
+\tab 3. Attach sound, video and image files from mobile devices\\
+\tab 4. Unlimited search history (Slack is limited to 10000 lines/chat)\\
+\tab 5. Search public and private channels for historical messages and
+comments\\
+\tab 6. LDAP support\\
+\tab 7. Open Source integrations service providing Gitlab and other software
+support\\
+\tab 8. The ability to create Rutgers specific addons (e.g. JIRA integration) since
+it is \tab opened source\\
+\tab 9. Define team-specific branding and color themes across your devices (TODO:
+figure \tab out if this is easy to do in open source version)\\
+\tab 10. Host and manage dozens of teams from a single server instance\\
+\tab 11. System Console and command line tools for managing essential IT
+administration \tab functions\\
+\tab 12. Features which Slack does not offer:\\
+\tab\tab a) Comment threads – to circle back on any topic\\
+\tab\tab b) on-English channel names – to support multi-lingual teams\\
+\tab\tab c) \#hashtags – to quickly tag and find any message\\
+\tab\tab d) Auto-highlight messages you wrote – to easily see what you said\\
 
-We can additionally customize Mattermost to provide features such as JIRA
-integration which is currently beyond the capabilities of
-Slack to provide
-1. Includes applications on the web and phone to access the messaging service
-2. Send messages and comments across public, private and 1-1 channels
-3. Personalize notifications for unreads and mentions by source
-4. Share files and images internally and externally
-5. Search public and private channels for historical messages and comments
-6. Attach sound, video and image files from mobile devices
-7. Define team-specific branding and color themes across your devices
-8. Host and manage dozens of teams from a single server instance
-9. System Console and command line tools for managing essential IT
-administration functions
-10. Open Source integrations service providing Gitlab and other software
-support
-11. Features which Slack does not offer:
-    a) Comment threads – to circle back on any topic
-    b) on-English channel names – to support multi-lingual teams
-    c) \#hashtags – to quickly tag and find any message
-    d) Auto-highlight messages you wrote – to easily see what you said
-
-In the long term, we see the Mattermost Server to serve any group of Rutgers
-employees seeking a free messaging service.
-
-$<$Summarize the major functions the product must perform or must let the user
-perform. Details will be provided in Section 3, so only a high level summary
-(such as a bullet list) is needed here. Organize the functions to make them
-understandable to any reader of the SRS. A picture of the major groups of
-related requirements and how they relate, such as a top level data flow diagram
-or object class diagram, is often effective.$>$
+In the long term, we see our Mattermost deployment being able to serve any group
+of Rutgers employees seeking a free and customizable messaging service.
 
 \section{User Classes and Characteristics}
- OIT Staff
- General Faculty
- Students
-$<$Identify the various user classes that you anticipate will use this product.
-User classes may be differentiated based on frequency of use, subset of product
-functions used, technical expertise, security or privilege levels, educational
-level, or experience. Describe the pertinent characteristics of each user class.
-Certain requirements may pertain only to certain user classes. Distinguish the
-most important user classes for this product from those who are less important
-to satisfy.$>$
+\textbf{OIT Employee:}
+\tab The primary users are expected to be OIT employees who will use this
+service to communicate amongst one another.  As knowledgeable users, we
+anticipate to receive feature requests from them.\\
+
+\textbf{System Administrator:}
+\tab The System Administrator has the priviledge to update and retrieve
+information in the database 
+
 
 \section{Operating Environment}
 Hardware - check mattermost requirements
