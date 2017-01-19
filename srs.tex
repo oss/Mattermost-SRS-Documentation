@@ -107,20 +107,16 @@ and Health Sciences (RBHS).\\
 
 The scope of this project includes deploying a local Mattermost server within
 Rutgers University and progressively rolling out this service to departments
-within the University.\\
-
-The Mattermost application can be installed and accessed through client
-applications with Windows, OS X, Linux, Android or iOS installed.  Therefore we
-do not need to create an interface for Mattermost however we have the ability
-to customize the interface as the Mattermost project is open-source.\\
+within the University.  Additionally, we can service any customization requests
+for the application as it is open-source.\\
 
 The long-term goal is to introduce this service to interested departments and
 customize the pre-existing application to the unique needs of Rutgers
 departments.
 
 \section{References}
-\textbf{Acceptable Use Policy for Information Technology Resources Policy:}\\
-http://policies.rutgers.edu/sites/policies/files/00005638.PDF\\
+%\textbf{Acceptable Use Policy for Information Technology Resources Policy:}\\
+%http://policies.rutgers.edu/sites/policies/files/00005638.PDF\\
 
 \noindent
 \textbf{Mattermost Features List:}\\
@@ -189,124 +185,107 @@ In the long term, we see our Mattermost deployment being able to serve any group
 of Rutgers employees seeking a free and customizable messaging service.
 
 \section{User Classes and Characteristics}
-\textbf{OIT Employee:}
-\tab The primary users are expected to be OIT employees who will use this
+\textbf{Rutgers Employee:}
+\tab The primary users are expected to be Rutgers employees who will use this
 service to communicate amongst one another.  As knowledgeable users, we
 anticipate to receive feature requests from them.\\
 
+\noindent
 \textbf{System Administrator:}
 \tab The System Administrator has the priviledge to update and retrieve
-information in the database 
-
+information in the database.
 
 \section{Operating Environment}
-Hardware - check mattermost requirements
-Software
-$<$Describe the environment in which the software will operate, including the
-hardware platform, operating system and versions, and any other software
-components or applications with which it must peacefully coexist.$>$
+The Mattermost client application can be installed on machines with operating
+systems of:
+\begin{itemize}
+\item Windows 7+ (IE 11*, Chrome 43+, Firefox 38+, and Edge)
+\item Mac 10.9+ (Safari 9, Chrome 43+)
+\item Linux - Arch 4.0.0 (Chrome 43+)
+\item Android 4.4+
+\item iOS 9+
+\end{itemize}
 
 \section{Design and Implementation Constraints}
-$<$Describe any items or issues that will limit the options available to the
-developers. These might include: corporate or regulatory policies; hardware
-limitations (timing requirements, memory requirements); interfaces to other
-applications; specific technologies, tools, and databases to be used; parallel
-operations; language requirements; communications protocols; security
-considerations; design conventions or programming standards (for example, if the
-customer’s organization will be responsible for maintaining the delivered
-software).$>$
+%$<$Describe any items or issues that will limit the options available to the
+%developers. These might include: corporate or regulatory policies; hardware
+%limitations (timing requirements, memory requirements); interfaces to other
+%applications; specific technologies, tools, and databases to be used; parallel
+%operations; language requirements; communications protocols; security
+%considerations; design conventions or programming standards (for example, if the
+%customer’s organization will be responsible for maintaining the delivered
+%software).$>$
 
 \section{User Documentation}
-$<$List the user documentation components (such as user manuals, on-line help,
-and tutorials) that will be delivered along with the software. Identify any
-known user documentation delivery formats or standards.$>$
+User documentation for Mattermost can be found in the following site:
+https://docs.mattermost.com/guides/user.html.
+
 \section{Assumptions and Dependencies}
+%$<$List any assumed factors (as opposed to known facts) that could affect the
+%requirements stated in the SRS. These could include third-party or commercial
+%components that you plan to use, issues around the development or operating
+%environment, or constraints. The project could be affected if these assumptions
+%are incorrect, are not shared, or change. Also identify any dependencies the
+%project has on external factors, such as software components that you intend to
+%reuse from another project, unless they are already documented elsewhere (for
+%example, in the vision and scope document or the project plan).$>$
 
-$<$List any assumed factors (as opposed to known facts) that could affect the
-requirements stated in the SRS. These could include third-party or commercial
-components that you plan to use, issues around the development or operating
-environment, or constraints. The project could be affected if these assumptions
-are incorrect, are not shared, or change. Also identify any dependencies the
-project has on external factors, such as software components that you intend to
-reuse from another project, unless they are already documented elsewhere (for
-example, in the vision and scope document or the project plan).$>$
 
-
-\chapter{External Interface Requirements}
-
-\section{User Interfaces}
-$<$Describe the logical characteristics of each interface between the software
-product and the users. This may include sample screen images, any GUI standards
-or product family style guides that are to be followed, screen layout
-constraints, standard buttons and functions (e.g., help) that will appear on
-every screen, keyboard shortcuts, error message display standards, and so on.
-Define the software components for which a user interface is needed. Details of
-the user interface design should be documented in a separate user interface
-specification.$>$
-
-\section{Hardware Interfaces}
-$<$Describe the logical and physical characteristics of each interface between
-the software product and the hardware components of the system. This may include
-the supported device types, the nature of the data and control interactions
-between the software and the hardware, and communication protocols to be
-used.$>$
-
-\section{Software Interfaces}
-$<$Describe the connections between this product and other specific software
-components (name and version), including databases, operating systems, tools,
-libraries, and integrated commercial components. Identify the data items or
-messages coming into the system and going out and describe the purpose of each.
-Describe the services needed and the nature of communications. Refer to
-documents that describe detailed application programming interface protocols.
-Identify data that will be shared across software components. If the data
-sharing mechanism must be implemented in a specific way (for example, use of a
-global data area in a multitasking operating system), specify this as an
-implementation constraint.$>$
-
-\section{Communications Interfaces}
-$<$Describe the requirements associated with any communications functions
-required by this product, including e-mail, web browser, network server
-communications protocols, electronic forms, and so on. Define any pertinent
-message formatting. Identify any communication standards that will be used, such
-as FTP or HTTP. Specify any communication security or encryption issues, data
-transfer rates, and synchronization mechanisms.$>$
+%\chapter{External Interface Requirements}
+%
+%\section{User Interfaces}
+%$<$Describe the logical characteristics of each interface between the software
+%product and the users. This may include sample screen images, any GUI standards
+%or product family style guides that are to be followed, screen layout
+%constraints, standard buttons and functions (e.g., help) that will appear on
+%every screen, keyboard shortcuts, error message display standards, and so on.
+%Define the software components for which a user interface is needed. Details of
+%the user interface design should be documented in a separate user interface
+%specification.$>$
+%
+%\section{Hardware Interfaces}
+%$<$Describe the logical and physical characteristics of each interface between
+%the software product and the hardware components of the system. This may include
+%the supported device types, the nature of the data and control interactions
+%between the software and the hardware, and communication protocols to be
+%used.$>$
+%
+%\section{Software Interfaces}
+%$<$Describe the connections between this product and other specific software
+%components (name and version), including databases, operating systems, tools,
+%libraries, and integrated commercial components. Identify the data items or
+%messages coming into the system and going out and describe the purpose of each.
+%Describe the services needed and the nature of communications. Refer to
+%documents that describe detailed application programming interface protocols.
+%Identify data that will be shared across software components. If the data
+%sharing mechanism must be implemented in a specific way (for example, use of a
+%global data area in a multitasking operating system), specify this as an
+%implementation constraint.$>$
+%
+%\section{Communications Interfaces}
+%$<$Describe the requirements associated with any communications functions
+%required by this product, including e-mail, web browser, network server
+%communications protocols, electronic forms, and so on. Define any pertinent
+%message formatting. Identify any communication standards that will be used, such
+%as FTP or HTTP. Specify any communication security or encryption issues, data
+%transfer rates, and synchronization mechanisms.$>$
 
 
 \chapter{System Features}
-$<$This template illustrates organizing the functional requirements for the
-product by system features, the major services provided by the product. You may
-prefer to organize this section by use case, mode of operation, user class,
-object class, functional hierarchy, or combinations of these, whatever makes the
-most logical sense for your product.$>$
 
-\section{System Feature 1}
-$<$Don’t really say “System Feature 1.” State the feature name in just a few
-words.$>$
-
-\subsection{Description and Priority}
+\section{Message History Synchronization over mulitple devices}
 $<$Provide a short description of the feature and indicate whether it is of
 High, Medium, or Low priority. You could also include specific priority
 component ratings, such as benefit, penalty, cost, and risk (each rated on a
 relative scale from a low of 1 to a high of 9).$>$
-
-\subsection{Stimulus/Response Sequences}
-$<$List the sequences of user actions and system responses that stimulate the
-behavior defined for this feature. These will correspond to the dialog elements
-associated with use cases.$>$
-
+\subsection{Description}
+In order to be able to synchronize message history between devices using
+Mattermost, we must setup a Mattermost server which will manage all of the
+message history from a centralized server.
+\subsection{Priority}
+This requirement is HIGH priority.
 \subsection{Functional Requirements}
-$<$Itemize the detailed functional requirements associated with this feature.
-These are the software capabilities that must be present in order for the user
-to carry out the services provided by the feature, or to execute the use case.
-Include how the product should respond to anticipated error conditions or
-invalid inputs. Requirements should be concise, complete, unambiguous,
-verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary
-information is not yet available.$>$
 
-$<$Each requirement should be uniquely identified with a sequence number or a
-meaningful tag of some kind.$>$
-
-REQ-1:	REQ-2:
 
 \section{System Feature 2 (and so on)}
 
