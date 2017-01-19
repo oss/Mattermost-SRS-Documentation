@@ -220,7 +220,7 @@ systems of:
 User documentation for Mattermost can be found in the following site:
 https://docs.mattermost.com/guides/user.html.
 
-\section{Assumptions and Dependencies}
+%\section{Assumptions and Dependencies}
 %$<$List any assumed factors (as opposed to known facts) that could affect the
 %requirements stated in the SRS. These could include third-party or commercial
 %components that you plan to use, issues around the development or operating
@@ -274,10 +274,6 @@ https://docs.mattermost.com/guides/user.html.
 \chapter{System Features}
 
 \section{Message History Synchronization over mulitple devices}
-$<$Provide a short description of the feature and indicate whether it is of
-High, Medium, or Low priority. You could also include specific priority
-component ratings, such as benefit, penalty, cost, and risk (each rated on a
-relative scale from a low of 1 to a high of 9).$>$
 \subsection{Description}
 In order to be able to synchronize message history between devices using
 Mattermost, we must setup a Mattermost server which will manage all of the
@@ -285,72 +281,109 @@ message history from a centralized server.
 \subsection{Priority}
 This requirement is HIGH priority.
 \subsection{Functional Requirements}
+To create this centralized server, we will first need to obtain the hardware
+specified in the Product Perspective.  We will be installing our Mattermost
+server in a CentOS 7 operating system.
+First, we will setup the
+database server (PostgreSQL 9.4+/MySQL 5.6+) to hold all of the users' chat
+information.  Once this is completed, we will setup proper user credentials on
+our machine along with an nginx server to serve message information to client
+devices.  A more detailed outline of installation steps can be found here:
+https://docs.mattermost.com/install/prod-rhel-7.html.
+
+\section{LDAP Support}
+To Be Determined.
+
+\section{Github Integration}
+\subsection{Description}
+Github integration would provide a mattermost channel for github messages for
+teams to keep track of like so:\\
+\includegraphics[scale=0.5, width=\textwidth]{github-integration.png}
+
+Github integration is one of many examples of possible additions that can be
+made to our Mattermost server.  Mattermost uses webhooks to receive real-time
+data from third party applications.
+\subsection{Priority}
+This requirement is LOW priority.
+\subsection{Functional Requirements}
+This integration would require us to run a python server requiring the flask
+and requests python packages.  Further details for installtion can be found
+here: https://github.com/softdevteam/mattermost-github-integration
+
+\section{Theme Customization}
+\subsection{Description}
+Mattermost allows us to customize the theme of the application, allowing us to
+set the theme to match the Rutgers colors or colors specified by a department.
+\subsection{Priority}
+This requirement is LOW priority.
+\subsection{Functional Requirements}
+The theme colors can be manipulated through the ``Theme'' Setting which can be
+accessed through the ``Account Setting'' > ``Display'' > ``Theme'' menu
+options.  More information can be found here:
+https://docs.mattermost.com/help/settings/theme-colors.html
 
 
-\section{System Feature 2 (and so on)}
-
-
-\chapter{Other Nonfunctional Requirements}
-
-\section{Performance Requirements}
-$<$If there are performance requirements for the product under various
-circumstances, state them here and explain their rationale, to help the
-developers understand the intent and make suitable design choices. Specify the
-timing relationships for real time systems. Make such requirements as specific
-as possible. You may need to state performance requirements for individual
-functional requirements or features.$>$
-
-\section{Safety Requirements}
-$<$Specify those requirements that are concerned with possible loss, damage, or
-harm that could result from the use of the product. Define any safeguards or
-actions that must be taken, as well as actions that must be prevented. Refer to
-any external policies or regulations that state safety issues that affect the
-product’s design or use. Define any safety certifications that must be
-satisfied.$>$
-
-\section{Security Requirements}
-$<$Specify any requirements regarding security or privacy issues surrounding use
-of the product or protection of the data used or created by the product. Define
-any user identity authentication requirements. Refer to any external policies or
-regulations containing security issues that affect the product. Define any
-security or privacy certifications that must be satisfied.$>$
-
-\section{Software Quality Attributes}
-$<$Specify any additional quality characteristics for the product that will be
-important to either the customers or the developers. Some to consider are:
-adaptability, availability, correctness, flexibility, interoperability,
-maintainability, portability, reliability, reusability, robustness, testability,
-and usability. Write these to be specific, quantitative, and verifiable when
-possible. At the least, clarify the relative preferences for various attributes,
-such as ease of use over ease of learning.$>$
-
-\section{Business Rules}
-$<$List any operating principles about the product, such as which individuals or
-roles can perform which functions under specific circumstances. These are not
-functional requirements in themselves, but they may imply certain functional
-requirements to enforce the rules.$>$
-
-
-\chapter{Other Requirements}
-$<$Define any other requirements not covered elsewhere in the SRS. This might
-include database requirements, internationalization requirements, legal
-requirements, reuse objectives for the project, and so on. Add any new sections
-that are pertinent to the project.$>$
-
-\section{Appendix A: Glossary}
-%see https://en.wikibooks.org/wiki/LaTeX/Glossary
-$<$Define all the terms necessary to properly interpret the SRS, including
-acronyms and abbreviations. You may wish to build a separate glossary that spans
-multiple projects or the entire organization, and just include terms specific to
-a single project in each SRS.$>$
-
-\section{Appendix B: Analysis Models}
-$<$Optionally, include any pertinent analysis models, such as data flow
-diagrams, class diagrams, state-transition diagrams, or entity-relationship
-diagrams.$>$
-
-\section{Appendix C: To Be Determined List}
-$<$Collect a numbered list of the TBD (to be determined) references that remain
-in the SRS so they can be tracked to closure.$>$
+%\chapter{Other Nonfunctional Requirements}
+%
+%\section{Performance Requirements}
+%$<$If there are performance requirements for the product under various
+%circumstances, state them here and explain their rationale, to help the
+%developers understand the intent and make suitable design choices. Specify the
+%timing relationships for real time systems. Make such requirements as specific
+%as possible. You may need to state performance requirements for individual
+%functional requirements or features.$>$
+%
+%\section{Safety Requirements}
+%$<$Specify those requirements that are concerned with possible loss, damage, or
+%harm that could result from the use of the product. Define any safeguards or
+%actions that must be taken, as well as actions that must be prevented. Refer to
+%any external policies or regulations that state safety issues that affect the
+%product’s design or use. Define any safety certifications that must be
+%satisfied.$>$
+%
+%\section{Security Requirements}
+%$<$Specify any requirements regarding security or privacy issues surrounding use
+%of the product or protection of the data used or created by the product. Define
+%any user identity authentication requirements. Refer to any external policies or
+%regulations containing security issues that affect the product. Define any
+%security or privacy certifications that must be satisfied.$>$
+%
+%\section{Software Quality Attributes}
+%$<$Specify any additional quality characteristics for the product that will be
+%important to either the customers or the developers. Some to consider are:
+%adaptability, availability, correctness, flexibility, interoperability,
+%maintainability, portability, reliability, reusability, robustness, testability,
+%and usability. Write these to be specific, quantitative, and verifiable when
+%possible. At the least, clarify the relative preferences for various attributes,
+%such as ease of use over ease of learning.$>$
+%
+%\section{Business Rules}
+%$<$List any operating principles about the product, such as which individuals or
+%roles can perform which functions under specific circumstances. These are not
+%functional requirements in themselves, but they may imply certain functional
+%requirements to enforce the rules.$>$
+%
+%
+%\chapter{Other Requirements}
+%$<$Define any other requirements not covered elsewhere in the SRS. This might
+%include database requirements, internationalization requirements, legal
+%requirements, reuse objectives for the project, and so on. Add any new sections
+%that are pertinent to the project.$>$
+%
+%\section{Appendix A: Glossary}
+%%see https://en.wikibooks.org/wiki/LaTeX/Glossary
+%$<$Define all the terms necessary to properly interpret the SRS, including
+%acronyms and abbreviations. You may wish to build a separate glossary that spans
+%multiple projects or the entire organization, and just include terms specific to
+%a single project in each SRS.$>$
+%
+%\section{Appendix B: Analysis Models}
+%$<$Optionally, include any pertinent analysis models, such as data flow
+%diagrams, class diagrams, state-transition diagrams, or entity-relationship
+%diagrams.$>$
+%
+%\section{Appendix C: To Be Determined List}
+%$<$Collect a numbered list of the TBD (to be determined) references that remain
+%in the SRS so they can be tracked to closure.$>$
 
 \end{document}

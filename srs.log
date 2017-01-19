@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.6)  19 JAN 2017 15:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.6)  19 JAN 2017 16:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -586,13 +586,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 3.
- [2
-
-])
+)
 \tf@toc=\write4
 \openout4 = `srs.toc'.
 
- [3]
+ [2
+
+]
 Chapter 1.
 
 Class scrreprt Warning: \float@addtolists detected!
@@ -639,9 +639,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--128
 
  []
 
-[4
+[3
 
-] [5]
+] [4]
 Chapter 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 146--150
@@ -653,7 +653,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--153
 
  []
 
-<images/mattermost-diagram.png, id=201, 1025.0295pt x 662.475pt>
+<images/mattermost-diagram.png, id=156, 1025.0295pt x 662.475pt>
 File: images/mattermost-diagram.png Graphic file (type png)
 
 <use images/mattermost-diagram.png>
@@ -664,7 +664,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--183
 
  []
 
-[6
+[5
 
  <./images/mattermost-diagram.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 188--192
@@ -678,92 +678,61 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 202.
- [7]
+ [6]
 Overfull \hbox (143.26726pt too wide) in paragraph at lines 220--222
 \OT1/cmr/m/n/10.95 User doc-u-men-ta-tion for Mat-ter-most can be found in the 
 fol-low-ing site: https://docs.mattermost.com/guides/user.html. 
  []
 
-[8]
+[7]
 Chapter 3.
-[9
+<images/github-integration.png, id=174, 996.72375pt x 378.41376pt>
+File: images/github-integration.png Graphic file (type png)
+
+<use images/github-integration.png>
+Package pdftex.def Info: images/github-integration.png used on input line 301.
+(pdftex.def)             Requested size: 498.36066pt x 189.2064pt.
+ [8
 
 ]
-Chapter 4.
-[10
+Overfull \hbox (113.99626pt too wide) in paragraph at lines 309--312
+\OT1/cmr/m/n/10.95 python pack-ages. Fur-ther de-tails for in-stall-tion can be
+ found here: https://github.com/softdevteam/mattermost-
+ []
 
-] [11]
-Chapter 5.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 356.
-[12
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 356.
+Overfull \hbox (6.51375pt too wide) in paragraph at lines 320--324
+\OT1/cmr/m/n/10.95 ma-tion can be found here: https://docs.mattermost.com/help/
+settings/theme-colors.html 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 389.
+[9 <./images/github-integration.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 389.
  (./srs.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 356.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 356.
-
-
-Package rerunfilecheck Warning: File `srs.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `srs.out':
-(rerunfilecheck)             Before: FF5C7E6BD63B090CA4F06B06A3A5E850;2273
-(rerunfilecheck)             After:  F02A0306C8B3D20B567A0442776BFBA7;1945.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 356.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 389.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 389.
+Package rerunfilecheck Info: File `srs.out' has not changed.
+(rerunfilecheck)             Checksum: 31A90C3753BA894693FE87A9FD6A7A63;1708.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 389.
  ) 
 Here is how much of TeX's memory you used:
- 8522 strings out of 495028
- 127911 string characters out of 6181498
- 260610 words of memory out of 5000000
- 11600 multiletter control sequences out of 15000+600000
+ 8502 strings out of 495028
+ 127846 string characters out of 6181498
+ 259607 words of memory out of 5000000
+ 11596 multiletter control sequences out of 15000+600000
  8782 words of font info for 31 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 36i,7n,38p,238b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section.6.3} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.6.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.6.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.6} has been referenced but does not exist, 
-replaced by a fixed one
-
-pdfTeX warning (dest): name{section.5.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.5.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.1.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.1.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.1.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.3.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.3.3} has been referenced but does not exist
-, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on srs.pdf (12 pages, 188314 bytes).
+ 36i,8n,38p,238b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on srs.pdf (9 pages, 218785 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
- 278 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 214 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 219 words of extra memory for PDF output out of 10000 (max. 10000000)
 
