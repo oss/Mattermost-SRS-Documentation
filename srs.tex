@@ -82,13 +82,13 @@
 \chapter{Introduction}
 
 \section{Purpose}
-Mattermost is an open-source SaaS messaging service (and Slack alternative) used
+Mattermost is an open-source SaaS messaging service used
 by several enterprise level organizations such as Samsung, Urban Outfitters,
 Red Hat, Mozilla, The University of British Columbia, Anthropologie, analyticsMD
 and LegalIO.\\
 
 The following document is meant to detail the features of Mattermost as well as
-the necessary software and hardware needed to implment these features.
+the necessary software and hardware needed to implement these features.
 
 \section{Intended Audience}
 The primary audience is the Office of Information Technology as well as members
@@ -98,13 +98,25 @@ Specifically, this document is to be read by the development team,
 project managers, stake holders, and testers.
 
 \section{Project Scope}
-Mattermost is intended to replace the informal use of Slack within University departments.  As stated in Section ABCXYZ, ``Thou shalt not... `` existing messaging service systems and chat
-clients with a new web-based system with features detailed within this
-document.\\
+%Mattermost is intended to replace the informal use of Slack within University departments.  As stated in Section ABCXYZ, ``Thou shalt not... `` existing messaging service systems and chat
+%clients with a new web-based system with features detailed within this
+%document.\\
+We plan on setting up Mattermost for the purpose of consolidating messaging for
+multiple departments without access to jabber such as Rutgers Biomedical
+and Health Sciences (RBHS).\\
 
 The scope of this project includes deploying a local Mattermost server within
 Rutgers University and progressively rolling out this service to departments
-within the University.
+within the University.\\
+
+The Mattermost application can be installed and accessed through client
+applications with Windows, OS X, Linux, Android or iOS installed.  Therefore we
+do not need to create an interface for Mattermost however we have the ability
+to customize the interface as the Mattermost project is open-source.\\
+
+The long-term goal is to introduce this service to interested departments and
+customize the pre-existing application to the unique needs of Rutgers
+departments.
 
 \section{References}
 \textbf{Acceptable Use Policy for Information Technology Resources Policy:}\\
@@ -122,14 +134,20 @@ https://www.mattermost.org/community-applications/\\
 \chapter{Overall Description}
 
 \section{Product Perspective}
-We plan to use Mattermost as a centralized messaging solution which is easy to
-manage and low cost for the Office of Information Technology Department (OIT)
-at Rutgers University.  Currently, many OIT Employees use messaging services
-which store chat information either locally on their machines (e.g. Pidgin) or
-in remote servers inaccessible to Rutgers Systems Administrators (e.g. Office
-365) which makes retrieving the information upon request difficult.\\
+%We plan to use Mattermost as a centralized messaging solution which is easy to
+%manage and low cost for the Office of Information Technology Department (OIT)
+%at Rutgers University.
 
-Setting up a messaging system with Mattermost within Rutgers allows the
+%Currently, many OIT Employees use messaging services
+%which store chat information either locally on their machines (e.g. Pidgin) or
+%in remote servers inaccessible to Rutgers Systems Administrators (e.g. Office
+%365) which makes retrieving the information upon request difficult.\\
+
+We plan to use Mattermost as a centralized messaging solution which is easy to
+manage and low cost for departments which lack a messaging platform (e.g.
+Pidgin) such as RBHS as mentioned in the Project Scope.
+
+Additionally, Setting up a messaging system with Mattermost within Rutgers allows the
 University to easily maintain employee chat information as well as provide
 features specific to the needs of Rutgers employees with its modifiable code
 base.\\
