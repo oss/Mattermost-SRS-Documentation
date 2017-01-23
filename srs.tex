@@ -110,6 +110,22 @@ Rutgers University and progressively rolling out this service to departments
 within the University.  Additionally, we can service any customization requests
 for the application as it is open-source.\\
 
+Additionally, alternative messaging services such as Slack or Office 365 do
+not currently meet our expectations for the following reasons:
+\begin{itemize}
+  \item Slack: Slack currently stores message information on their remote
+    cloud systems.  This violates Section B3 of the \textbf{Rutgers University Acceptable
+    Use Policy for Information Technology Resource} which states:\\
+    \noindent
+    \textit{Using third party, cloud and non-cloud, systems not authorized or 
+      approved by OIT’s Information Protection and Security (IPS) Division to 
+      transmit, process, store Rutgers data classified as restricted, including 
+      ePHI. Contact OIT’s IPS division for additional information on using 
+      third party systems.}
+  \item Office 365: Office 365 does not meet our groups requirements due to
+    lacking source control and unit testing integration.
+\end{itemize}
+
 The long-term goal is to introduce this service to interested departments and
 customize the pre-existing application to the unique needs of Rutgers
 departments.
@@ -155,7 +171,6 @@ The following image is a diagram of the major components of the overall system:
 \includegraphics[scale=0.5, width=\textwidth]{mattermost-diagram.png}
 
 \section{Product Functions}
-(TODO: Determine the best order for these features)\\
 Mattermost can provide the following features:\\
 \tab 1. A website, android app and iOS app to access your Mattermost
 account, allowing \tab employees to pick up conversations where they left off when
@@ -164,21 +179,20 @@ leaving the desk\\
 \tab 3. Attach sound, video and image files from mobile devices\\
 \tab 4. Unlimited search history (Slack is limited to 10000 lines/chat)\\
 \tab 5. Search public and private channels for historical messages and
-comments\\
-\tab 6. LDAP support\\
+comments with Discovery in mind\\
+\tab 6. CAS support\\
 \tab 7. Open Source integrations service providing Gitlab and other software
 support\\
 \tab 8. The ability to create Rutgers specific addons (e.g. JIRA integration) since
 it is \tab opened source\\
-\tab 9. Define team-specific branding and color themes across your devices (TODO:
-figure \tab out if this is easy to do in open source version)\\
+\tab 9. Define team-specific branding and color themes across your devices
 \tab 10. Host and manage dozens of teams from a single server instance\\
 \tab 11. System Console and command line tools for managing essential IT
 administration \tab functions\\
 \tab 12. Features which Slack does not offer:\\
 \tab\tab a) Comment threads – to circle back on any topic\\
-\tab\tab b) on-English channel names – to support multi-lingual teams\\
-\tab\tab c) \#hashtags – to quickly tag and find any message\\
+\tab\tab b) Non-English channel names – to support multi-lingual teams\\
+\tab\tab c) Hashtags – to quickly tag and find any message\\
 \tab\tab d) Auto-highlight messages you wrote – to easily see what you said\\
 
 In the long term, we see our Mattermost deployment being able to serve any group
@@ -217,7 +231,7 @@ systems of:
 %software).$>$
 
 \section{User Documentation}
-User documentation for Mattermost can be found in the following site:
+User documentation for Mattermost can be found in the following site:\\
 https://docs.mattermost.com/guides/user.html.
 
 %\section{Assumptions and Dependencies}
@@ -291,7 +305,7 @@ our machine along with an nginx server to serve message information to client
 devices.  A more detailed outline of installation steps can be found here:
 https://docs.mattermost.com/install/prod-rhel-7.html.
 
-\section{LDAP Support}
+\section{CAS Support}
 To Be Determined.
 
 \section{Github Integration}
@@ -318,7 +332,7 @@ set the theme to match the Rutgers colors or colors specified by a department.
 This requirement is LOW priority.
 \subsection{Functional Requirements}
 The theme colors can be manipulated through the ``Theme'' Setting which can be
-accessed through the ``Account Setting'' > ``Display'' > ``Theme'' menu
+accessed through the ``Account Setting'' \textgreater ``Display'' \textgreater ``Theme'' menu
 options.  More information can be found here:
 https://docs.mattermost.com/help/settings/theme-colors.html
 
