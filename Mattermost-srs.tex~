@@ -1,0 +1,395 @@
+%Copyright 2014 Jean-Philippe Eisenbarth
+%This program is free software: you can
+%redistribute it and/or modify it under the terms of the GNU General Public
+%License as published by the Free Software Foundation, either version 3 of the
+%License, or (at your option) any later version.
+%This program is distributed in the hope that it will be useful,but WITHOUT ANY
+%WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+%PARTICULAR PURPOSE. See the GNU General Public License for more details.
+%You should have received a copy of the GNU General Public License along with
+%this program.  If not, see <http://www.gnu.org/licenses/>.
+
+%Based on the code of Yiannis Lazarides
+%http://tex.stackexchange.com/questions/42602/software-requirements-specification-with-latex
+%http://tex.stackexchange.com/users/963/yiannis-lazarides
+%Also based on the template of Karl E. Wiegers
+%http://www.se.rit.edu/~emad/teaching/slides/srs_template_sep14.pdf
+%http://karlwiegers.com
+\documentclass{scrreprt}
+\usepackage{listings}
+\usepackage{underscore}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\newcommand\tab[1][0.5cm]{\hspace*{#1}}
+\graphicspath{ {images/} }
+\hypersetup{
+    bookmarks=false,    % show bookmarks bar?
+    pdftitle={Software Requirement Specification},    % title
+    pdfauthor={OSS},                     % author
+    pdfsubject={TeX and LaTeX},                        % subject of the document
+    pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,       % color of internal links
+    citecolor=black,       % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=purple,        % color of external links
+    linktoc=page            % only page is linked
+}%
+\def\myversion{1.0 }
+\date{}
+%\title{%
+
+%}
+\begin{document}
+
+\begin{flushright}
+    \rule{16cm}{5pt}\vskip1cm
+    \begin{bfseries}
+        \Huge{SOFTWARE REQUIREMENTS\\ SPECIFICATION}\\
+        \vspace{1.9cm}
+        for\\
+        \vspace{1.9cm}
+        Mattermost Adoption Project\\
+        \vspace{1.9cm}
+        \LARGE{Version \myversion}\\
+        \vspace{1.9cm}
+        Prepared by Open System Solutions\\
+        \vspace{1.9cm}
+        \today\\
+    \end{bfseries}
+\end{flushright}
+
+\tableofcontents
+
+
+%\chapter*{Revision History}
+%
+%\begin{center}
+%    \begin{tabular}{|c|c|c|c|}
+%        \hline
+%	    Name & Date & Reason For Changes & Version\\
+%        \hline
+%	    21 & 22 & 23 & 24\\
+%        \hline
+%	    31 & 32 & 33 & 34\\
+%        \hline
+%    \end{tabular}
+%\end{center}
+
+\chapter{Introduction}
+
+\section{Purpose}
+Mattermost is an Open Source ``Software as a Service'' (SaaS) messaging service used
+by several enterprise-level organizations such as Samsung, Urban Outfitters,
+Red Hat, Mozilla, The University of British Columbia, Anthropologie, analyticsMD
+and LegalIO.\\
+
+The following document is meant to detail the features of Mattermost as well as
+the necessary software and hardware needed to implement these features.
+
+\section{Intended Audience}
+The primary audience is the Office of Information Technology.  More
+specifically, this document is written for the University Directors,
+Directors, project managers, the development team, and testers.
+
+\section{Project Scope}
+%Mattermost is intended to replace the informal use of Slack within University departments.  As stated in Section ABCXYZ, ``Thou shalt not... `` existing messaging service systems and chat
+%clients with a new web-based system with features detailed within this
+%document.\\
+
+We plan to deploy Mattermost for the purpose of a chat-based messaging
+service for departments throughout Rutgers who do not have access to
+jabber or are forced to use Slack informally.  Some of these
+departments include Rutgers Biomedical and Health Sciences (RBHS) and the Rutgers Telecommunications Division (TD).\\
+
+The scope of this project includes deploying a local Mattermost server within
+Rutgers University and progressively rolling out this service to departments
+within the University.  Additionally, we can service any customization requests
+for the application as it is Open Source.\\
+
+Mattermost was chosen for this project since alternative messaging services such
+as Slack or Office 365 do not meet our requirements for the following reasons:
+\begin{itemize}
+  \item Slack: Slack currently stores message information on their remote
+    cloud systems.  This violates Section B3 of the \textbf{Rutgers University Acceptable
+    Use Policy for Information Technology Resource} which states:\\
+    \noindent
+    \textit{Using third-party, cloud and non-cloud, systems not authorized or 
+      approved by OIT’s Information Protection and Security (IPS) Division to 
+      transmit, process, store Rutgers data classified as restricted, including 
+      ePHI. Contact OIT’s IPS division for additional information on using 
+      third-party systems.}
+  \item Office 365: Office 365 does not meet our groups requirements due to
+    lacking source control and unit testing integration.
+\end{itemize}
+
+The long-term goal is to introduce this service to interested departments (ie: current Slack adoptees) and
+customize the pre-existing application to the unique needs of academic and service departments throughout the University.
+
+\section{References}
+%\textbf{Acceptable Use Policy for Information Technology Resources Policy:}\\
+%http://policies.rutgers.edu/sites/policies/files/00005638.PDF\\
+
+\noindent
+\textbf{Mattermost Features List:}\\
+https://www.mattermost.org/features/\\
+
+\noindent
+\textbf{Mattermost Integration Apps:}\\
+https://www.mattermost.org/community-applications/\\
+
+
+\chapter{Overall Description}
+
+\section{Product Perspective}
+%We plan to use Mattermost as a centralized messaging solution which is easy to
+%manage and low cost for the Office of Information Technology Department (OIT)
+%at Rutgers University.
+
+%Currently, many OIT Employees use messaging services
+%which store chat information either locally on their machines (e.g. Pidgin) or
+%in remote servers inaccessible to Rutgers Systems Administrators (e.g. Office
+%365) which makes retrieving the information upon request difficult.\\
+
+We plan to use Mattermost as a centralized messaging solution which is easy to
+manage and low-cost for departments which lack a messaging platform (e.g.
+Pidgin) such as RBHS as mentioned in the Project Scope.
+
+Additionally, setting up a messaging system with Mattermost within Rutgers allows the
+University to easily maintain employee chat information as well as provide
+features specific to the needs of Rutgers employees with its modifiable code
+base.\\
+
+To support the OIT department with Mattermost, we would require a single server
+with 4 vCPUs/cores, 8 GB RAM, and 90-180 GB storage.\\
+
+The following image is a diagram of the major components of the overall system:
+\includegraphics[scale=0.5, width=\textwidth]{mattermost-diagram.png}
+
+\section{Product Functions}
+Mattermost can provide the following features:\\
+\tab 1. A web application, mobile application (both Android and iOS) to access your Mattermost
+account, allowing \tab employees to pick up conversations where they left off\\
+\tab 2. Share files and images within chats\\
+\tab 3. Attach sound, video and image files from mobile devices\\
+\tab 4. Unlimited search history (freely-available Slack is limited to 10000 lines/chat)\\
+\tab 5. Search public and private channels for historical messages and
+comments with eDiscovery in mind\\
+\tab 6. CAS support\\
+\tab 7. Open Source integrations service providing Gitlab and other software
+support\\
+\tab 8. The ability to create Rutgers-specific addons (e.g. JIRA integration) since
+it is \tab opened source\\
+\tab 9. Host and manage dozens of teams from a single server instance\\
+\tab 10. Define team-specific branding and color themes across your devices
+\tab 11. System Console and command line tools for managing essential IT
+administration \tab functions\\
+\tab 12. Features which Slack does not offer:\\
+\tab\tab a) Comment threads – to circle back on any topic\\
+\tab\tab b) Non-English channel names – to support multi-lingual teams\\
+\tab\tab c) Hashtags – to quickly tag and find any message\\
+\tab\tab d) Auto-highlight messages you wrote – to easily see what you said\\
+
+In the long term, we see our Mattermost deployment being able to serve any group
+of Rutgers employees seeking a free and customizable messaging service.
+
+\section{User Classes and Characteristics}
+\textbf{Rutgers Employee:}
+\tab The primary users are expected to be Rutgers employees who will
+use this service to communicate.  As knowledgeable users, we
+anticipate feature requests from them.\\
+
+\noindent
+\textbf{System Administrator:}
+\tab The System Administrator has the priviledge to update and retrieve
+information in the database, set up both private and public channels, create teams, (* check documentation for more capabilities) and handle eDiscovery requests as needed.
+
+\noindent
+\textbf{Channel Administrator:}
+\tab Designated by the System Administrator to monitor and maintain a given channel   (* check documentation for more capabilities) .  These users can create teams within a given channel, set up both private and public channels, create teams within a channel, 
+
+\section{Operating Environment}
+The Mattermost client application can be installed on machines with operating
+systems of:
+\begin{itemize}
+\item Windows 7+ (IE 11*, Chrome 43+, Firefox 38+, and Edge)
+\item Mac 10.9+ (Safari 9, Chrome 43+)
+\item Linux - Arch 4.0.0 (Chrome 43+)
+\item Android 4.4+
+\item iOS 9+
+\end{itemize}
+
+\section{User Documentation}
+User documentation for Mattermost can be found in the following site:\\
+https://docs.mattermost.com/guides/user.html.
+
+%\section{Assumptions and Dependencies}
+%$<$List any assumed factors (as opposed to known facts) that could affect the
+%requirements stated in the SRS. These could include third-party or commercial
+%components that you plan to use, issues around the development or operating
+%environment, or constraints. The project could be affected if these assumptions
+%are incorrect, are not shared, or change. Also identify any dependencies the
+%project has on external factors, such as software components that you intend to
+%reuse from another project, unless they are already documented elsewhere (for
+%example, in the vision and scope document or the project plan).$>$
+
+
+%\chapter{External Interface Requirements}
+%
+%\section{User Interfaces}
+%$<$Describe the logical characteristics of each interface between the software
+%product and the users. This may include sample screen images, any GUI standards
+%or product family style guides that are to be followed, screen layout
+%constraints, standard buttons and functions (e.g., help) that will appear on
+%every screen, keyboard shortcuts, error message display standards, and so on.
+%Define the software components for which a user interface is needed. Details of
+%the user interface design should be documented in a separate user interface
+%specification.$>$
+%
+%\section{Hardware Interfaces}
+%$<$Describe the logical and physical characteristics of each interface between
+%the software product and the hardware components of the system. This may include
+%the supported device types, the nature of the data and control interactions
+%between the software and the hardware, and communication protocols to be
+%used.$>$
+%
+%\section{Software Interfaces}
+%$<$Describe the connections between this product and other specific software
+%components (name and version), including databases, operating systems, tools,
+%libraries, and integrated commercial components. Identify the data items or
+%messages coming into the system and going out and describe the purpose of each.
+%Describe the services needed and the nature of communications. Refer to
+%documents that describe detailed application programming interface protocols.
+%Identify data that will be shared across software components. If the data
+%sharing mechanism must be implemented in a specific way (for example, use of a
+%global data area in a multitasking operating system), specify this as an
+%implementation constraint.$>$
+%
+%\section{Communications Interfaces}
+%$<$Describe the requirements associated with any communications functions
+%required by this product, including e-mail, web browser, network server
+%communications protocols, electronic forms, and so on. Define any pertinent
+%message formatting. Identify any communication standards that will be used, such
+%as FTP or HTTP. Specify any communication security or encryption issues, data
+%transfer rates, and synchronization mechanisms.$>$
+
+
+\chapter{System Features}
+
+\section{Message History Synchronization over mulitple devices}
+\subsection{Description}
+In order to synchronize message history between devices using
+Mattermost, we must setup a Mattermost server which will manage all of
+the message history from a centralized server.
+\subsection{Priority}
+This requirement is HIGH priority.
+\subsection{Functional Requirements}
+To create this centralized server, we will need to obtain the hardware
+specified in the Product Perspective, then install our Mattermost
+server in a CentOS 7 operating system.
+First, we will setup the
+database server (PostgreSQL 9.4+/MySQL 5.6+) to hold all of the users' chat
+information.  Once this is completed, we will setup proper user credentials on
+our machine along with an nginx server to serve message information to client
+devices.  A more detailed outline of installation steps can be found here:
+https://docs.mattermost.com/install/prod-rhel-7.html.
+
+\section{CAS Support}
+To Be Determined.
+
+\section{Github Integration}
+\subsection{Description}
+Github integration would provide a mattermost channel for github messages for
+teams to keep track of like so:\\
+\includegraphics[scale=0.5, width=\textwidth]{github-integration.png}
+
+Github integration is one of many examples of possible additions that can be
+made to our Mattermost server.  Mattermost uses webhooks to receive real-time
+data from third-party applications.
+\subsection{Priority}
+This requirement is LOW priority.
+\subsection{Functional Requirements}
+This integration would require us to run a python server requiring the flask
+and requests python packages.  Further details for installtion can be found
+here: https://github.com/softdevteam/mattermost-github-integration
+
+\section{Theme Customization}
+\subsection{Description}
+Mattermost allows us to customize the theme of the application, allowing us to
+set the theme to match the Rutgers colors or colors specified by a department.
+\subsection{Priority}
+This requirement is LOW priority.
+\subsection{Functional Requirements}
+The theme colors can be manipulated through the ``Theme'' Setting which can be
+accessed through the ``Account Setting'' \textgreater ``Display'' \textgreater ``Theme'' menu
+options.  More information can be found here:
+https://docs.mattermost.com/help/settings/theme-colors.html
+
+
+%\chapter{Other Nonfunctional Requirements}
+%
+%\section{Performance Requirements}
+%$<$If there are performance requirements for the product under various
+%circumstances, state them here and explain their rationale, to help the
+%developers understand the intent and make suitable design choices. Specify the
+%timing relationships for real time systems. Make such requirements as specific
+%as possible. You may need to state performance requirements for individual
+%functional requirements or features.$>$
+%
+%\section{Safety Requirements}
+%$<$Specify those requirements that are concerned with possible loss, damage, or
+%harm that could result from the use of the product. Define any safeguards or
+%actions that must be taken, as well as actions that must be prevented. Refer to
+%any external policies or regulations that state safety issues that affect the
+%product’s design or use. Define any safety certifications that must be
+%satisfied.$>$
+%
+%\section{Security Requirements}
+%$<$Specify any requirements regarding security or privacy issues surrounding use
+%of the product or protection of the data used or created by the product. Define
+%any user identity authentication requirements. Refer to any external policies or
+%regulations containing security issues that affect the product. Define any
+%security or privacy certifications that must be satisfied.$>$
+%
+%\section{Software Quality Attributes}
+%$<$Specify any additional quality characteristics for the product that will be
+%important to either the customers or the developers. Some to consider are:
+%adaptability, availability, correctness, flexibility, interoperability,
+%maintainability, portability, reliability, reusability, robustness, testability,
+%and usability. Write these to be specific, quantitative, and verifiable when
+%possible. At the least, clarify the relative preferences for various attributes,
+%such as ease of use over ease of learning.$>$
+%
+%\section{Business Rules}
+%$<$List any operating principles about the product, such as which individuals or
+%roles can perform which functions under specific circumstances. These are not
+%functional requirements in themselves, but they may imply certain functional
+%requirements to enforce the rules.$>$
+%
+%
+%\chapter{Other Requirements}
+%$<$Define any other requirements not covered elsewhere in the SRS. This might
+%include database requirements, internationalization requirements, legal
+%requirements, reuse objectives for the project, and so on. Add any new sections
+%that are pertinent to the project.$>$
+%
+%\section{Appendix A: Glossary}
+%%see https://en.wikibooks.org/wiki/LaTeX/Glossary
+%$<$Define all the terms necessary to properly interpret the SRS, including
+%acronyms and abbreviations. You may wish to build a separate glossary that spans
+%multiple projects or the entire organization, and just include terms specific to
+%a single project in each SRS.$>$
+%
+%\section{Appendix B: Analysis Models}
+%$<$Optionally, include any pertinent analysis models, such as data flow
+%diagrams, class diagrams, state-transition diagrams, or entity-relationship
+%diagrams.$>$
+%
+%\section{Appendix C: To Be Determined List}
+%$<$Collect a numbered list of the TBD (to be determined) references that remain
+%in the SRS so they can be tracked to closure.$>$
+
+\end{document}
